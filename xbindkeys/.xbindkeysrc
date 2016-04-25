@@ -1,0 +1,83 @@
+# For the benefit of emacs users: -*- shell-script -*-
+###########################
+# xbindkeys configuration #
+###########################
+#
+# Version: 1.8.5
+#
+# If you edit this file, do not forget to uncomment any lines
+# that you change.
+# The pound(#) symbol may be used anywhere for comments.
+#
+# To specify a key, you can use 'xbindkeys --key' or
+# 'xbindkeys --multikey' and put one of the two lines in this file.
+#
+# The format of a command line is:
+#    "command to start"
+#       associated key
+#
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
+#
+# List of modifier:
+#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+#
+
+# The release modifier is not a standard X modifier, but you can
+# use it if you want to catch release events instead of press events
+
+# By defaults, xbindkeys does not pay attention with the modifiers
+# NumLock, CapsLock and ScrollLock.
+# Uncomment the lines above if you want to pay attention to them.
+
+#keystate_numlock = enable
+#keystate_capslock = enable
+#keystate_scrolllock= enable
+
+# standard buttons
+# left 1
+# middle 2
+# right 3
+# scroll up 4
+# scroll down 5
+# scroll left 6
+# scroll right 7
+# back 8
+# forward 9
+
+# extra buttons
+# gs500 stop 10
+# mx 518 default dpi 10
+
+
+# tab back
+"xte 'keydown Control_R' 'keydown Shift_R' 'key Tab' 'keyup Shift_R' 'keyup Control_R'"
+  b:8
+
+# tab forward
+"xte 'keydown Control_R' 'key Tab' 'keyup Control_R'"
+  b:9
+
+# tab close
+"xte 'keydown Control_R' 'key w' 'keyup Control_R'"
+  b:10
+
+# tab re-open: no need to simulate shift, it is already pressed.
+"xte 'keydown Control_R' 'key t' 'keyup Control_R'"
+  shift + b:10
+
+  # back browser
+"xte 'keydown Alt_R' 'key Left' 'keyup Alt_R'"
+  b:6
+
+# forward browser
+"xte 'keydown Alt_R' 'key Right' 'keyup Alt_R'"
+  b:7
+  
+
+##################################
+# End of xbindkeys configuration #
+##################################

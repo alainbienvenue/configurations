@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<style-scheme id="alain" _name="Alain" version="1.0">
+	<author>Alain Bienvenue</author>
+	<_description>My favorite colours</_description>
+
+  <color name="gray20" value="#333333"/>
+  <color name="gray70" value="#b3b3b3"/>
+  <color name="white" value="#ffffff"/>
+  <color name="black" value="#000000"/>
+  <color name="green" value="#00b200"/>
+  <color name="aqua" value="#00d8ff"/>
+  <color name="blue" value="#398EE6"/>
+  <color name="lightskyblue" value="#87CEFA"/>
+  <color name="purple" value="#8722c9"/>
+  <color name="magenta3" value="#cd00cd"/>
+  <color name="orange" value="#E67321"/>
+  <color name="carbon" value="#232323"/>
+  <color name="salmon" value="#fa8072"/>
+  <color name="steelblue3" value="#4f94cd"/>
+  <color name="palevioletred2" value="#ee799f"/>
+  <color name="brown4" value="#8b2323"/>
+  <color name="red" value="#ff0000"/>
+
+<!-- Global Settings -->
+
+	<style name="text" foreground="#cc9000" background="#1e1e1e"/>
+	<style name="cursor" foreground="#a1a1a1" />
+	<style name="current-line" background="#474747"/>
+	<style name="line-numbers" foreground="#a1a1a1" background="#474747"/>
+	<style name="selection" foreground="#ffbf00" background="#214283"/>
+
+    <style name="def:error" foreground="white" background="red" bold="true"/>
+
+<!-- Constants and Variables-->
+  <style name="def:string" foreground="green" bold="true"/>
+  
+<!-- XML Styles -->
+  <style name="xml:attribute-name" foreground="magenta3"/>
+  <style name="xml:element-name" foreground="blue"/>
+
+
+</style-scheme>

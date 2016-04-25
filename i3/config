@@ -1,0 +1,213 @@
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+#do this first to set the primary screen
+exec  ~/.config/i3/screen.sh
+
+set $mod Mod4
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+#font pango:monospace 8
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+# Before i3 v4.8, we used to recommend this one as the default:
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+semicolon focus floating
+bindcode $mod+48 focus tiling
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# resize window
+bindsym $mod+Shift+h resize shrink width
+bindsym $mod+Shift+j resize grow height
+bindsym $mod+Shift+k resize shrink height
+bindsym $mod+Shift+l resize grow width
+
+bindsym $mod+Shift+semicolon fullscreen
+
+bindsym $mod+Shift+Left resize shrink width
+bindsym $mod+Shift+Down resize grow height
+bindsym $mod+Shift+Up resize shrink height
+bindsym $mod+Shift+Right resize grow width
+
+
+# move focused window with Alt key
+bindsym $mod+Mod1+h move left
+bindsym $mod+Mod1+j move down
+bindsym $mod+Mod1+k move up
+bindsym $mod+Mod1+l move right
+
+bindsym $mod+Mod1+semicolon floating enable; move position center
+bindsym $mod+Shift+Mod1+semicolon floating enable; resize shrink width 10000 px; resize grow width 900 px; resize shrink height 10000 px; resize grow height 600 px;  move position center
+bindcode $mod+Mod1+48 floating disable
+
+bindsym $mod+Mod1+Left move left
+bindsym $mod+Mod1+Down move down
+bindsym $mod+Mod1+Up move up
+bindsym $mod+Mod1+Right move right
+
+bindsym $mod+Mod1+u layout tabbed
+bindsym $mod+Mod1+i layout splitv
+bindsym $mod+Mod1+o layout splith
+
+bindsym $mod+Mod1+n split h; exec i3-sensible-terminal
+bindsym $mod+Mod1+m split v; exec i3-sensible-terminal
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# switch 2 screens at a time with num pad
+bindcode $mod+87 workspace 2; workspace 1
+bindcode $mod+88 workspace 4; workspace 3
+bindcode $mod+89 workspace 6; workspace 5
+bindcode $mod+83 workspace 8; workspace 7
+bindcode $mod+84 workspace 10; workspace 9
+bindcode $mod+85 workspace 12; workspace 11
+
+
+# travel through workspaces on the current output
+bindcode $mod+23 workspace next_on_output
+bindcode $mod+shift+23 workspace prev_on_output
+
+# travel through containers
+bindcode Mod1+23 focus right
+bindcode Mod1+shift+23 focus left
+
+
+# move focused container to workspace
+bindsym $mod+Mod1+1 move container to workspace 1
+bindsym $mod+Mod1+2 move container to workspace 2
+bindsym $mod+Mod1+3 move container to workspace 3
+bindsym $mod+Mod1+4 move container to workspace 4
+bindsym $mod+Mod1+5 move container to workspace 5
+bindsym $mod+Mod1+6 move container to workspace 6
+bindsym $mod+Mod1+7 move container to workspace 7
+bindsym $mod+Mod1+8 move container to workspace 8
+bindsym $mod+Mod1+9 move container to workspace 9
+bindsym $mod+Mod1+0 move container to workspace 10
+
+
+#mouse buttons action
+# standard buttons
+# left 1
+# middle 2
+# right 3
+# scroll up 4
+# scroll down 5
+# scroll left 6
+# scroll right 7
+# back 8
+# forward 9
+
+# The side buttons move the window around
+# mouse binding does not work in the version deployed by ubuntu
+#bindsym button9 move left
+#bindsym button8 move right
+
+
+
+
+set $mode_quit [c]onfiguration reload, [r]estart, [l]ogout, [s]creen placement
+
+mode "$mode_quit" {
+	# run arandr to adjust screen placement
+	bindsym s exec /usr/bin/arandr; mode "default"
+
+	# reload the configuration file
+	bindsym c reload; mode "default"
+
+	# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+	bindsym r restart
+
+	# exit i3 (logs you out of your X session)
+	bindsym l exit
+
+        bindsym Escape mode "default"
+}
+
+#System control
+bindcode $mod+Control+119 mode "$mode_quit"
+bindsym $mod+Control+l exec i3lock --color=003030
+bindsym $mod+Control+r restart
+bindsym $mod+Control+c reload; mode default
+bindsym $mod+Control+q kill
+
+#display config file with control-win-?
+bindcode $mod+Control+61 exec i3-sensible-terminal -title i3-config-file -e /etc/alternatives/pager ~/.config/i3/config jk
+
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3status
+}
+
+
+
+
+#application shortcuts
+#explorer
+bindsym $mod+e exec i3-sensible-terminal -e ranger
+bindsym $mod+f exec firefox
+bindsym $mod+c exec chromium-browser --incognito
+bindsym $mod+d workspace 1; exec idea
+bindsym $mod+Return exec i3-sensible-terminal
+
+# start dmenu (a program launcher)
+#bindsym $mod+r exec dmenu_run
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+bindsym $mod+r exec --no-startup-id i3-dmenu-desktop --entry-type=name
+bindsym $mod+Shift+r exec gmrun
+for_window [class="Gmrun"] floating enable
+
+
+# use this to debug startup: > ~/.i3startup.out 2> ~/.i3startup.error
+exec  ~/.config/i3/local_autostart.sh 
+exec  /var/lib/dropbox/.dropbox-dist/dropboxd
+exec  xsetroot -solid "#000000"
+exec  xbindkeys
+exec  /usr/bin/numlockx on
+exec  xautolock -time 10 -locker "/usr/bin/i3lock --color=003030" -notify 60 -notifier "xset dpms force off" &
+#exec --no-startup-id clipit # -n 
+
+#use "xprop | grep WM_CLASS | cut -d'"' --output-delimiter=$'\n' -f4 | xsel -b" to copy class name in clipboard
+for_window [class="Gnome-screenshot"] floating enable
+for_window [class="Arandr"] floating enable
+for_window [class="Gcalctool"] floating enable
+for_window [title="i3-config-file"] fullscreen
+for_window [class="Meld"] floating enable
+
+
+
