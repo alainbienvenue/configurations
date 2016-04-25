@@ -3,3 +3,4 @@ export JAVA_HOME=/usr/java/java7
 export PATH="$JAVA_HOME/bin:$PATH"
 export IDEA_JDK=/usr/java/java7
 ~/applications/idea/bin/idea.sh
+#comment added
