@@ -1,0 +1,22 @@
+"*":
+  "autocomplete-plus":
+    backspaceTriggersAutocomplete: true
+    confirmCompletion: "tab always, enter when suggestion explicitly selected"
+  autosave:
+    enabled: true
+  core:
+    projectHome: "/Users/abienvenue/dev"
+    reopenProjectMenuCount: 30
+    telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "atom-dark-syntax"
+    ]
+  editor:
+    fontSize: 16
+    lineHeight: 1.1
+    scrollPastEnd: true
+    softWrap: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "e7396380-3623-445c-b231-92b390d8712f"

@@ -1,0 +1,136 @@
+# Insert your preferred key mappings here.
+unmap <c-e>
+unmap <c-y>
+unmap d
+unmap zH
+unmap zL
+unmap yy
+unmap p
+unmap P
+unmap gU
+unmap gu
+unmap f
+unmap F
+unmap <a-f>
+unmap yf
+//unmap gf
+//unmap gF
+unmap gt
+unmap T
+unmap o
+unmap O
+unmap b
+unmap B
+unmap gE
+unmap ge
+unmap H
+unmap L
+unmap t
+unmap gT
+unmap J
+unmap K
+unmap ^
+unmap g0
+unmap g$
+unmap yt
+unmap x
+unmap X
+unmap W
+unmap <<
+unmap >>
+unmap [[
+unmap ]]
+
+
+map u previousTab
+map i nextTab
+map U firstTab
+map I lastTab
+map <a-u> previousTab
+map <a-i> nextTab
+map <c-u> moveTabLeft
+map <c-i> moveTabRight
+map <c-a-u> moveTabLeft
+map <c-a-i> moveTabRight
+
+# this gives the option to select tabs from other
+# windows. We do not use this, since i3 will not
+#  display the desktop where that window is.
+# map gt Vomnibar.activateTabSelection
+
+map <a-h> goBack
+map <a-l> goForward
+map gh goBack
+map gl goForward
+
+map <c-h> scrollLeft
+map <c-left> scrollLeft
+map h scrollToLeft
+map <left> scrollToLeft
+map H scrollToLeft
+map <home> scrollToLeft
+
+map <c-l> scrollRight
+map <c-right> scrollRight
+map l scrollToRight
+map <right> scrollToRight
+map L scrollToRight
+map <end> scrollToRight
+
+map <c-j> scrollDown
+map <c-down> scrollDown
+map j scrollPageDown
+map <down> scrollPageDown
+map J scrollFullPageDown
+
+map <c-k> scrollUp
+map <c-up> scrollUp
+map k scrollPageUp
+map <up> scrollPageUp
+map K scrollFullPageUp
+
+map go Vomnibar.activate
+map to Vomnibar.activateInNewTab
+map o Vomnibar.activateInNewTab
+
+map gd Vomnibar.activateEditUrl
+map td Vomnibar.activateEditUrlInNewTab
+map d Vomnibar.activateEditUrlInNewTab
+map tt duplicateTab
+
+map gb Vomnibar.activateBookmarks
+map tb Vomnibar.activateBookmarksInNewTab
+map b Vomnibar.activateBookmarksInNewTab
+
+map f LinkHints.activateMode
+map ga LinkHints.activateMode
+map ta LinkHints.activateModeToOpenInNewTab
+map a LinkHints.activateModeToOpenInNewTab
+map Ta LinkHints.activateModeToOpenInNewForegroundTab
+map tma LinkHints.activateModeWithQueue
+
+map gp openCopiedUrlInCurrentTab
+map tp openCopiedUrlInNewTab
+map p openCopiedUrlInNewTab
+
+map gr goToRoot
+map gu goUp
+map gn goNext
+# map ?? goPrevious
+
+map T restoreTab
+map th createTab
+
+map da LinkHints.activateModeToDownloadLink
+map yd copyCurrentUrl
+map ya LinkHints.activateModeToCopyLinkUrl
+
+
+map wt moveTabToNewWindow
+# this is to remap native c-W that exits the whole application
+map <c-W> moveTabToNewWindow
+
+map qt removeTab
+map qo closeOtherTabs
+map qi closeTabsOnRight
+map qu closeTabsOnLeft
