@@ -1,0 +1,48 @@
+format = '$cmd_duration$jobs$status$hostname$time$kubernetes$line_break$directory$git_branch$git_status$line_break$character'
+
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[%%](green)'
+error_symbol = '[%%](green)'
+
+[directory]
+truncation_length = 12
+truncate_to_repo = false
+truncation_symbol = '…/'
+repo_root_style = 'bold purple'
+repo_root_format = '[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($repo_root_style)[$read_only]($read_only_style) '
+style = 'bold bright-blue'
+
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol$hostname]($style) '
+style = 'bold bright-black'
+
+[java]
+disabled=true
+
+[kubernetes]
+disabled = false
+format = '[$symbol$context( \($namespace\))]($style) '
+style = 'cyan'
+	
+[aws]
+disabled = true
+
+[git_status]
+format = '([\[$conflicted$ahead_behind\]]($style) )'
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[time]
+disabled = false
+style = 'bright-white'
+format = '[$time]($style) '
+
+[cmd_duration]
+format = '''took [$duration]($style)
+'''
+
+[status]
+disabled = false
+format = '[$symbol \($status\)]($style) '
